@@ -28,42 +28,42 @@ const IMAGES_3 = [
 
 export const AryaRampur = () => {
   return (
-    <div className="relative bg-[#D8E6E2] ">
+    <div className="relative bg-background ">
       <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center">
         <ContainerAnimated>
-          <h1 className="font-serif text-4xl font-extralight  md:text-5xl text-[#0E553F]">
+          <h1 className="font-serif text-4xl font-extralight  md:text-5xl text-primary">
             Our{" "}
-            <span className=" font-serif font-extralight text-[#0B6A4F]">
+            <span className=" font-serif font-extralight text-secondary">
               Rampur Branch
             </span>
           </h1>
         </ContainerAnimated>
         <ContainerAnimated>
-          <h1 className="font-serif text-4xl font-extralight md:text-5xl text-[#0E553F]">
+          <h1 className="font-serif text-4xl font-extralight md:text-5xl text-primary">
             is now operational
           </h1>
         </ContainerAnimated>
 
         <ContainerAnimated className="my-4">
-          <p className="leading-normal tracking-tight text-lg text-[#0E553F]">
+          <p className="leading-normal tracking-tight text-lg text-foreground">
             Aarya Hotels Rampur offers a premium stay with modern amenities, warm hospitality, <br/> and easy access for business and leisure travellers. Experience a comfortable, well <br/> connected hotel in Rampur that delivers relaxation, convenience, and reliable service.
           </p>
         </ContainerAnimated>
 
         <ContainerAnimated>
           <Button
-            className="gap-1 bg-[#0E553F] text-white hover:bg-[#0E553F]/90"
+            className="gap-1 bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Book Now <VideoIcon className="size-4  " />
           </Button>
-          <Button variant={"link"} className="text-[#0E553F]">
+          <Button variant={"link"} className="text-primary">
             About Us
           </Button>
         </ContainerAnimated>
       </ContainerStagger>
       <div className="pointer-events-none absolute z-10 h-[70vh] w-full "
       style={{
-            background: "linear-gradient(to right, #A9C0B8, #0B6A4F, #1A7A5E)",
+            background: "linear-gradient(to right, var(--color-lavander-clay), var(--color-burnt-caramel), var(--color-velvet-garnet))",
             filter: "blur(84px)",
             mixBlendMode: "screen",
           }}
