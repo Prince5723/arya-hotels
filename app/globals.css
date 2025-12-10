@@ -7,18 +7,18 @@
   --color-burnt-caramel: #987863;
   --color-velvet-garnet: #5d0a31;
 
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: var(--color-ivory-dust);
+  --color-black: var(--color-velvet-garnet);
 
   /* Semantic */
   --color-primary: var(--color-velvet-garnet);
-  --color-primary-foreground: var(--color-white);
+  --color-primary-foreground: var(--color-ivory-dust);
 
   --color-secondary: var(--color-burnt-caramel);
-  --color-secondary-foreground: var(--color-white);
+  --color-secondary-foreground: var(--color-ivory-dust);
 
   --color-accent: var(--color-lavander-clay);
-  --color-accent-foreground: var(--color-black);
+  --color-accent-foreground: var(--color-velvet-garnet);
 
   --color-background: var(--color-ivory-dust);
   --color-foreground: var(--color-velvet-garnet);
@@ -27,14 +27,14 @@
   --color-surface-foreground: var(--color-velvet-garnet);
 
   --color-muted: var(--color-burnt-caramel);
-  --color-muted-foreground: var(--color-white);
+  --color-muted-foreground: var(--color-ivory-dust);
 
   --color-border: var(--color-lavander-clay);
   --color-input: var(--color-lavander-clay);
   --color-ring: var(--color-velvet-garnet);
 
-  --color-destructive: #8b1a1a;
-  --color-destructive-foreground: var(--color-white);
+  --color-destructive: var(--color-velvet-garnet);
+  --color-destructive-foreground: var(--color-ivory-dust);
 }
 
 * {

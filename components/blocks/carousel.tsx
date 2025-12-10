@@ -203,7 +203,7 @@ export const Card = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+              className="fixed inset-0 h-full w-full bg-primary/80 backdrop-blur-lg"
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -217,7 +217,7 @@ export const Card = ({
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-primary hover:bg-secondary"
                 onClick={handleClose}
               >
-                <IconX className="h-6 w-6 text-white" />
+                <IconX className="h-6 w-6 text-primary-foreground" />
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
@@ -247,7 +247,7 @@ export const Card = ({
       >
         {/* Gradient overlay with enhanced hover effect */}
         <motion.div 
-          className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-primary/70 via-transparent to-transparent"
           animate={{
             opacity: isHovered ? 0.7 : 1,
           }}
@@ -299,13 +299,13 @@ export const Card = ({
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-left font-sans text-sm font-medium text-primary-foreground md:text-base"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-balance text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-balance text-primary-foreground md:text-3xl"
           >
             {card.title}
           </motion.p>
@@ -313,7 +313,7 @@ export const Card = ({
         
         {/* Animated shine effect on hover */}
         <motion.div
-          className="absolute inset-0 z-20 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+          className="absolute inset-0 z-20 bg-gradient-to-r from-transparent via-background/15 to-transparent"
           animate={{
             x: isHovered ? ["0%", "200%"] : "-100%",
           }}
