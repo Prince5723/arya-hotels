@@ -31,24 +31,24 @@ export function HeroSection() {
                                 <p className="mt-8 max-w-2xl text-balance text-lg text-foreground drop-shadow-lg">Blending tradition with modern luxury, AARYA Hotels creates meaningful stays designed for comfort, connection, and lasting impressions.</p>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        className="h-12 rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold">
-                                        <Link href="#book-now">
-                                            <span className="text-nowrap">Book Now</span>
-                                            <ChevronRight className="ml-2 size-5" />
-                                        </Link>
-                                    </Button>
-                                    <Button
-                                        asChild
-                                        size="lg"
-                                        variant="outline"
-                                        className="h-12 rounded-full px-8 text-base text-primary border-2 border-primary hover:bg-accent hover:text-primary-foreground hover:border-accent font-semibold">
-                                        <Link href="#partner-with-us">
-                                            <span className="text-nowrap">Partner With Us</span>
-                                        </Link>
-                                    </Button>
+                            <Button
+                                asChild
+                                size="lg"
+                                className="h-12 rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold">
+                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+                                    <span className="text-nowrap">Book Now</span>
+                                    <ChevronRight className="ml-2 size-5" />
+                                </Link>
+                            </Button>
+                            <Button
+                                asChild
+                                size="lg"
+                                variant="outline"
+                                className="h-12 rounded-full px-8 text-base text-primary border-2 border-primary hover:bg-accent hover:text-primary-foreground hover:border-accent font-semibold">
+                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+                                    <span className="text-nowrap">Partner With Us</span>
+                                </Link>
+                            </Button>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +219,7 @@ const HeroHeader = () => {
                                 size="sm"
                                 className="h-9 rounded-full px-5 bg-primary-foreground text-primary hover:bg-surface font-semibold"
                             >
-                                <Link href="#book-now">
+                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
                                     Book Now
                                 </Link>
                             </Button>
@@ -227,9 +227,9 @@ const HeroHeader = () => {
                                 asChild
                                 size="sm"
                                 variant="outline"
-                                className="h-9 rounded-full px-5 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold"
+                                className="h-9 rounded-full px-5 border-2 border-primary-foreground text-primary hover:bg-primary-foreground/10 font-semibold"
                             >
-                                <Link href="#partner-with-us">
+                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
                                     Partner With Us
                                 </Link>
                             </Button>
@@ -286,7 +286,7 @@ const HeroHeader = () => {
                                         size="sm"
                                         className="w-full h-10 rounded-full bg-background text-primary hover:bg-surface font-semibold"
                                     >
-                                        <Link href="#book-now" onClick={() => setMenuState(false)}>
+                                        <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer" onClick={() => setMenuState(false)}>
                                             Book Now
                                         </Link>
                                     </Button>
@@ -294,9 +294,9 @@ const HeroHeader = () => {
                                         asChild
                                         size="sm"
                                         variant="outline"
-                                        className="w-full h-10 rounded-full border-2 border-background text-primary-foreground hover:bg-background/10 font-semibold"
+                                        className="w-full h-10 rounded-full border-2 border-background text-primary hover:bg-background/10 font-semibold"
                                     >
-                                        <Link href="#partner-with-us" onClick={() => setMenuState(false)}>
+                                        <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer" onClick={() => setMenuState(false)}>
                                             Partner With Us
                                         </Link>
                                     </Button>

@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Layout, Pointer, Zap } from "lucide-react";
+import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -87,7 +88,7 @@ const Feature108 = ({
           <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
             {heading}
           </h1>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-foreground/80">{description}</p>
         </div>
         <Tabs defaultValue={tabs[0].value} className="mt-8">
           <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
@@ -95,7 +96,7 @@ const Feature108 = ({
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-foreground/80 data-[state=active]:bg-muted data-[state=active]:text-primary"
               >
                 {tab.icon} {tab.label}
               </TabsTrigger>
@@ -115,12 +116,20 @@ const Feature108 = ({
                   <h3 className="text-3xl font-semibold lg:text-5xl">
                     {tab.content.title}
                   </h3>
-                  <p className="text-muted-foreground lg:text-lg">
+                  <p className="text-foreground/80 lg:text-lg">
                     {tab.content.description}
                   </p>
-                  <Button className="mt-2.5 w-fit gap-2" size="lg">
-                    {tab.content.buttonText}
-                  </Button>
+                  {tab.content.buttonText === "Book Now" ? (
+                    <Button asChild className="mt-2.5 w-fit gap-2" size="lg">
+                      <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+                        {tab.content.buttonText}
+                      </Link>
+                    </Button>
+                  ) : (
+                    <Button className="mt-2.5 w-fit gap-2" size="lg">
+                      {tab.content.buttonText}
+                    </Button>
+                  )}
                 </div>
                 <img
                   src={tab.content.imageSrc}

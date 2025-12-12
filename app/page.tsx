@@ -4,17 +4,21 @@ import {AryaRamnagar} from "@/components/blocks/arya-ramnagar";
 import {UpcomingProjects} from "@/components/blocks/upcoming-projects";
 import PartnerWithUs from "@/components/blocks/partner-with-us";
 import { ContactPage } from "@/components/ui/contact-page";
+import Footer from "@/components/blocks/footer";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-    <HeroSection />
-    <About />
-    <AryaRamnagar />
-    <UpcomingProjects/>
-    <PartnerWithUs />
-    <ContactPage/>
+      <HeroSection />
+      <div className="flex flex-col gap-12 md:gap-16 lg:gap-20">
+        <About />
+        <AryaRamnagar />
+        <UpcomingProjects/>
+        <PartnerWithUs />
+        <ContactPage/>
+      </div>
+      <Footer />
     </>
   );
 }

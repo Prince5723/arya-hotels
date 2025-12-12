@@ -1,55 +1,70 @@
-import { Layout, Pointer, Zap } from "lucide-react";
+import { Bed, UtensilsCrossed, Activity, Wine } from "lucide-react";
 
 import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108"
 
 const HotelData = {
-  badge: "shadcnblocks.com",
-  heading: "A Collection of Components Built With Shadcn & Tailwind",
-  description: "Join us to build flawless web solutions.",
+  badge: "Our Amenities",
+  heading: "Stay in the Heart of Ramnagar",
+  description: "Experience comfort and luxury with our premium facilities.",
   tabs: [
     {
       value: "tab-1",
-      icon: <Zap className="h-auto w-4 shrink-0" />,
-      label: "Boost Revenue",
+      icon: <Bed className="h-auto w-4 shrink-0" />,
+      label: "Bedroom",
       content: {
-        badge: "Modern Tactics",
-        title: "Make your site a true standout.",
+        badge: "Comfortable Stay",
+        title: "Luxurious Bedrooms for Your Comfort",
         description:
-          "Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.",
-        buttonText: "See Plans",
+          "Relax in our spacious, well-appointed bedrooms featuring modern amenities, premium bedding, and elegant decor. Each room is designed to provide the perfect blend of comfort and style for a restful stay.",
+        buttonText: "Book Now",
         imageSrc:
-          "https://content3.jdmagicbox.com/comp/nainital/j9/9999p5942.5942.221013185632.y2j9/catalogue/a3-queen-corbett-corbett-national-park-corbett-hotels-mxbhgp28sh.jpg",
-        imageAlt: "placeholder",
+          "/bedroom1-ramnagar.jpeg",
+        imageAlt: "Bedroom",
       },
     },
     {
       value: "tab-2",
-      icon: <Pointer className="h-auto w-4 shrink-0" />,
-      label: "Higher Engagement",
+      icon: <UtensilsCrossed className="h-auto w-4 shrink-0" />,
+      label: "Dining",
       content: {
-        badge: "Expert Features",
-        title: "Boost your site with top-tier design.",
+        badge: "Culinary Excellence",
+        title: "Exquisite Dining Experience",
         description:
-          "Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.",
-        buttonText: "See Tools",
+          "Savor delicious meals prepared by our expert chefs. Our dining area offers a warm, inviting atmosphere where you can enjoy local and international cuisine made with fresh, quality ingredients.",
+        buttonText: "View Menu",
         imageSrc:
-          "/IMG_4648.jpg",
-        imageAlt: "placeholder",
+          "/dining-area-ramnagar.jpeg",
+        imageAlt: "Dining Area",
       },
     },
     {
       value: "tab-3",
-      icon: <Layout className="h-auto w-4 shrink-0" />,
-      label: "Stunning Layouts",
+      icon: <Activity className="h-auto w-4 shrink-0" />,
+      label: "Activities",
       content: {
-        badge: "Elite Solutions",
-        title: "Build an advanced web experience.",
+        badge: "Entertainment & Recreation",
+        title: "Engaging Activities for All Ages",
         description:
-          "Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.",
-        buttonText: "See Options",
+          "Make the most of your stay with our range of activities. From outdoor adventures to indoor entertainment, we offer something for everyone to enjoy during their visit to Ramnagar.",
+        buttonText: "Explore Activities",
         imageSrc:
-          "https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg",
-        imageAlt: "placeholder",
+          "/chilling-ramnagar.jpeg",
+        imageAlt: "Activities",
+      },
+    },
+    {
+      value: "tab-4",
+      icon: <Wine className="h-auto w-4 shrink-0" />,
+      label: "Bar",
+      content: {
+        badge: "Relax & Unwind",
+        title: "Premium Bar Experience",
+        description:
+          "Unwind at our elegant bar with a selection of fine beverages, cocktails, and spirits. The perfect place to relax after a day of exploring or to socialize with fellow guests in a sophisticated setting.",
+        buttonText: "Visit Bar",
+        imageSrc:
+          "/terrace-ramnagar.jpeg",
+        imageAlt: "Bar",
       },
     },
   ],

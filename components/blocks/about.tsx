@@ -22,7 +22,7 @@ export default function About() {
                             variant="default"
                             size="sm"
                             className="gap-1 pr-1.5 border border-border">
-                            <Link href="https://wa.me/918539053555" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
                                 <span>Partner With Us</span>
                                 <ChevronRight className="size-4" />
                             </Link>

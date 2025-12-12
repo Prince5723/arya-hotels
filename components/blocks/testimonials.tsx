@@ -4,58 +4,58 @@ import { motion } from "motion/react";
 
 const testimonials = [
   {
-    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+    text: "Our stay at AARYA Hotels Ramnagar was absolutely wonderful! The rooms were spacious and beautifully decorated, with all the modern amenities we needed. The staff was incredibly welcoming and attentive throughout our visit.",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
-    name: "Briana Patton",
-    role: "Operations Manager",
+    name: "Priya Sharma",
+    role: "Business Traveler",
   },
   {
-    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
+    text: "The dining experience exceeded our expectations. The food was delicious, and the dining area had such a warm, inviting atmosphere. We enjoyed every meal during our stay and would definitely return.",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
-    name: "Bilal Ahmed",
-    role: "IT Manager",
+    name: "Rajesh Kumar",
+    role: "Family Guest",
   },
   {
-    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
+    text: "The hotel's location in the heart of Ramnagar made it perfect for exploring the area. The staff went above and beyond to help us plan our activities and made excellent recommendations for local attractions.",
     image: "https://randomuser.me/api/portraits/women/3.jpg",
-    name: "Saman Malik",
-    role: "Customer Support Lead",
+    name: "Anita Desai",
+    role: "Tourist",
   },
   {
-    text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
+    text: "We loved the bar area - it was the perfect place to unwind after a day of sightseeing. The ambiance was sophisticated, and the service was impeccable. AARYA Hotels truly knows how to make guests feel special.",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Omar Raza",
-    role: "CEO",
+    name: "Vikram Singh",
+    role: "Leisure Traveler",
   },
   {
-    text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
+    text: "The bedroom was so comfortable and well-appointed. We had the best night's sleep during our stay. The attention to detail in the room design and amenities really made a difference in our experience.",
     image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Zainab Hussain",
-    role: "Project Manager",
+    name: "Meera Patel",
+    role: "Couple",
   },
   {
-    text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
+    text: "AARYA Hotels provided exceptional hospitality from check-in to check-out. The combination of traditional warmth and modern luxury created a memorable stay. We highly recommend this hotel to anyone visiting Ramnagar.",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
-    name: "Aliza Khan",
-    role: "Business Analyst",
+    name: "Kavita Reddy",
+    role: "Solo Traveler",
   },
   {
-    text: "Our business functions improved with a user-friendly design and positive customer feedback.",
+    text: "The activities and facilities at the hotel kept us engaged throughout our stay. Whether relaxing in the common areas or exploring nearby attractions, everything was convenient and well-organized.",
     image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "Farhan Siddiqui",
-    role: "Marketing Director",
+    name: "Amit Verma",
+    role: "Group Traveler",
   },
   {
-    text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
+    text: "What impressed us most was the level of service. Every staff member was friendly, professional, and eager to help. The hotel truly embodies the spirit of Indian hospitality with modern comforts.",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
-    name: "Sana Sheikh",
-    role: "Sales Manager",
+    name: "Sunita Joshi",
+    role: "Repeat Guest",
   },
   {
-    text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
+    text: "Our experience at AARYA Hotels was outstanding. The perfect blend of comfort, convenience, and excellent service made our trip to Ramnagar unforgettable. We'll definitely be back!",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
-    name: "Hassan Ali",
-    role: "E-commerce Manager",
+    name: "Rahul Mehta",
+    role: "Corporate Guest",
   },
 ];
 
@@ -82,10 +82,10 @@ const Testimonials = () => {
           </div>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5">
-            What our users say
+            What our guests say
           </h2>
           <p className="text-center mt-5 opacity-75">
-            See what our customers have to say about us.
+            See what our guests have to say about their stay at AARYA Hotels.
           </p>
         </motion.div>
 
