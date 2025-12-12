@@ -50,17 +50,15 @@ export default function PartnerWithUs() {
     ]
 
     return (
-        <section id="partner-with-us" className="relative min-h-screen overflow-hidden bg-background">
-            {/* Unified Background with Gradient from Bottom */}
-            <div className="relative bg-gradient-to-t from-accent via-background to-background pt-16 pb-40">
-                {/* Subtle texture overlay */}
-                <div 
-                    className="absolute inset-0 opacity-5"
-                    style={{
-                        backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0,0,0,0.15) 1px, transparent 0)`,
-                        backgroundSize: '40px 40px'
-                    }}
-                />
+        <section id="partner-with-us" className="relative overflow-hidden bg-background">
+            {/* Refined layered gradient */}
+            <div className="relative pt-16 pb-40">
+                <div className="absolute inset-0">
+                    <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-primary/12 via-primary/4 to-transparent" />
+                    <div className="absolute -left-10 top-10 h-64 w-64 rounded-full bg-secondary/25 blur-3xl opacity-70" />
+                    <div className="absolute right-0 top-28 h-72 w-72 rounded-full bg-primary/20 blur-3xl opacity-70" />
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-10 h-32 w-96 bg-accent/25 blur-3xl opacity-60" />
+                </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6">
                     {/* Top Section - Content */}
@@ -103,7 +101,7 @@ export default function PartnerWithUs() {
                                 size="lg"
                                 className="h-14 rounded-full px-10 bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-semibold shadow-lg"
                             >
-                                <Link href="https://wa.me/918539053555" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
                                     <span>Start Your Partnership</span>
                                     <ChevronRight className="ml-2 size-5" />
                                 </Link>

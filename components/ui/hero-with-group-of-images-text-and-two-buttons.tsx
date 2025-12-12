@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 
 function Hero() {
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:gap-10 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
             <div>
               <Badge variant="outline">We&apos;re excited to host you</Badge>
@@ -15,11 +15,8 @@ function Hero() {
               <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
                 Stay in the Heart of Ramnagar
               </h1>
-              <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                Managing a small business today is already tough. Avoid further
-                complications by ditching outdated, tedious trade methods. Our
-                goal is to streamline SMB trade, making it easier and faster than
-                ever.
+              <p className="text-xl leading-relaxed tracking-tight text-foreground/80 max-w-md text-left">
+                Experience comfort and luxury in the heart of Ramnagar. Our hotel offers modern amenities, warm hospitality, and easy access to local attractions, making it perfect for both business and leisure travelers.
               </p>
             </div>
             <div className="flex flex-row gap-4">

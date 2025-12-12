@@ -43,7 +43,7 @@ export function ContactPage() {
 	];
 
 	return (
-		<div className="min-h-screen w-full">
+		<div id="contact" className="min-h-screen w-full">
 			<div className="mx-auto h-full max-w-6xl lg:border-x">
 				<div
 					aria-hidden
@@ -57,8 +57,8 @@ export function ContactPage() {
 					<h1 className=" text-4xl font-bold md:text-5xl">
 						Contact Us
 					</h1>
-					<p className="text-muted-foreground mb-5 text-base">
-						Contact the support team at Asme.
+					<p className="text-foreground/80 mb-5 text-base">
+						Get in touch with us for bookings, inquiries, or any assistance you need.
 					</p>
 				</div>
 				<BorderSeparator />
@@ -167,14 +167,14 @@ function Box({
 			)}
 		>
 			<div className="bg-muted/40 flex items-center gap-x-3 border-b p-4">
-				<props.icon className="text-muted-foreground size-5" strokeWidth={1} />
+				<props.icon className="text-foreground/80 size-5" strokeWidth={1} />
 				<h2 className="font-heading text-lg font-medium tracking-wider">
 					{title}
 				</h2>
 			</div>
 			<div className="flex items-center gap-x-2 p-4 py-12">{children}</div>
 			<div className="border-t p-4">
-				<p className="text-muted-foreground text-sm">{description}</p>
+				<p className="text-foreground/80 text-sm">{description}</p>
 			</div>
 		</div>
 	);

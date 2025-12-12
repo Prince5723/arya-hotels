@@ -5,6 +5,7 @@ import { ContainerAnimated,
   GalleryCol,
   GalleryContainer } from "@/components/blocks/animated-gallery"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { VideoIcon } from "lucide-react"
 
 const IMAGES_1 = [
@@ -52,9 +53,12 @@ export const AryaRamnagar = () => {
 
         <ContainerAnimated>
           <Button
+            asChild
             className="gap-1 bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            Book Now 
+            <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+              Book Now 
+            </Link>
           </Button>
         </ContainerAnimated>
       </ContainerStagger>
