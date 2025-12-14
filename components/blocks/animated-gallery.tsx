@@ -77,6 +77,7 @@ export const ContainerScroll = ({
   )
 }
 ContainerScroll.displayName = "ContainerScroll"
+
 export const ContainerSticky = ({
   className,
   style,
@@ -114,7 +115,7 @@ export const GalleryContainer = ({
   return (
     <motion.div
       className={cn(
-        "relative grid size-full grid-cols-3 gap-2 rounded-2xl",
+        "relative grid size-full grid-cols-2 md:grid-cols-3 gap-1.5 md:gap-2 rounded-xl md:rounded-2xl px-2 md:px-0",
         className
       )}
       style={{
@@ -143,7 +144,7 @@ export const GalleryCol = ({
 
   return (
     <motion.div
-      className={cn("relative flex w-full flex-col gap-2 ", className)}
+      className={cn("relative flex w-full flex-col gap-1.5 md:gap-2", className)}
       style={{
         y,
         ...style,

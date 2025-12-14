@@ -29,25 +29,25 @@ const IMAGES_3 = [
 
 export const AryaRamnagar = () => {
   return (
-    <div className="relative bg-background ">
-      <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 text-center">
+    <div className="relative bg-background">
+      <ContainerStagger className="relative z-[9999] -mb-8 md:-mb-12 place-self-center px-4 md:px-6 text-center">
         <ContainerAnimated>
-          <h1 className="font-serif text-4xl font-extralight  md:text-5xl text-primary">
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-extralight text-primary">
             Our{" "}
-            <span className=" font-serif font-extralight text-secondary">
+            <span className="font-serif font-extralight text-secondary">
               Ramnagar Branch
             </span>
           </h1>
         </ContainerAnimated>
         <ContainerAnimated>
-          <h1 className="font-serif text-4xl font-extralight md:text-5xl text-primary">
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-extralight text-primary">
             is now operational
           </h1>
         </ContainerAnimated>
 
-        <ContainerAnimated className="my-4">
-          <p className="leading-normal tracking-tight text-lg text-foreground">
-            Aarya Hotels Ramnagar offers a premium stay with modern amenities, warm hospitality, <br/> and easy access for business and leisure travellers. Experience a comfortable, well <br/> connected hotel in Ramnagar that delivers relaxation, convenience, and reliable service.
+        <ContainerAnimated className="my-3 md:my-4">
+          <p className="leading-relaxed md:leading-normal tracking-tight text-sm md:text-base lg:text-lg text-foreground max-w-3xl mx-auto">
+            Aarya Hotels Ramnagar offers a premium stay with modern amenities, warm hospitality, and easy access for business and leisure travellers. Experience a comfortable, well connected hotel in Ramnagar that delivers relaxation, convenience, and reliable service.
           </p>
         </ContainerAnimated>
 
@@ -62,23 +62,23 @@ export const AryaRamnagar = () => {
           </Button>
         </ContainerAnimated>
       </ContainerStagger>
-      <div className="pointer-events-none absolute z-10 h-[70vh] w-full "
-      style={{
-            background: "linear-gradient(to right, var(--color-lavander-clay), var(--color-burnt-caramel), var(--color-velvet-garnet))",
-            filter: "blur(84px)",
-            mixBlendMode: "screen",
-          }}
+      
+      <div className="pointer-events-none absolute z-10 h-[50vh] md:h-[70vh] w-full"
+        style={{
+          background: "linear-gradient(to right, var(--color-lavander-clay), var(--color-burnt-caramel), var(--color-velvet-garnet))",
+          filter: "blur(84px)",
+          mixBlendMode: "screen",
+        }}
       />
 
-      <ContainerScroll className="relative h-[350vh]">
+      <ContainerScroll className="relative h-[150vh] md:h-[300vh] lg:h-[350vh]">
         <ContainerSticky className="h-svh">
           <GalleryContainer className="">
             <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">
               {IMAGES_1.map((imageUrl, index) => (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   key={index}
-                  className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
+                  className="aspect-video block h-auto max-h-full w-full rounded-md object-cover shadow"
                   src={imageUrl}
                   alt="gallery item"
                 />
@@ -86,21 +86,19 @@ export const AryaRamnagar = () => {
             </GalleryCol>
             <GalleryCol className="mt-[-50%]" yRange={["15%", "5%"]}>
               {IMAGES_2.map((imageUrl, index) => (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   key={index}
-                  className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
+                  className="aspect-video block h-auto max-h-full w-full rounded-md object-cover shadow"
                   src={imageUrl}
                   alt="gallery item"
                 />
               ))}
             </GalleryCol>
-            <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">
+            <GalleryCol yRange={["-10%", "2%"]} className="-mt-2 hidden md:flex">
               {IMAGES_3.map((imageUrl, index) => (
-                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   key={index}
-                  className="aspect-video block h-auto max-h-full w-full  rounded-md  object-cover shadow"
+                  className="aspect-video block h-auto max-h-full w-full rounded-md object-cover shadow"
                   src={imageUrl}
                   alt="gallery item"
                 />
