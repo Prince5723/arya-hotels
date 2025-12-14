@@ -69,7 +69,7 @@ export default function KineticScrollGallery() {
     );
 
     return (
-        <div className="bg-background text-foreground py-20">
+        <div className="bg-background text-foreground">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-12 text-center space-y-3">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">

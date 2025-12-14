@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 function Hero() {
   return (
-    <div className="w-full py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+    <div className="w-full py-20 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 md:gap-10 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">

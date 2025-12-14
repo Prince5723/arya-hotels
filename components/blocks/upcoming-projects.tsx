@@ -9,7 +9,7 @@ export function UpcomingProjects() {
   ));
 
   return (
-    <div className="w-full h-full py-20 bg-background">
+    <div className="w-full h-full bg-background">
       <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-secondary mb-8">
         Upcoming Projects
       </h2>

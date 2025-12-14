@@ -52,7 +52,7 @@ export default function PartnerWithUs() {
     return (
         <section id="partner-with-us" className="relative overflow-hidden bg-background">
             {/* Refined layered gradient */}
-            <div className="relative pt-16 pb-40">
+            <div className="relative pb-24">
                 <div className="absolute inset-0">
                     <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-primary/12 via-primary/4 to-transparent" />
                     <div className="absolute -left-10 top-10 h-64 w-64 rounded-full bg-secondary/25 blur-3xl opacity-70" />

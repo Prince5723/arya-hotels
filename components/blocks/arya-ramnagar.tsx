@@ -30,7 +30,7 @@ const IMAGES_3 = [
 export const AryaRamnagar = () => {
   return (
     <div className="relative bg-background ">
-      <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center">
+      <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 text-center">
         <ContainerAnimated>
           <h1 className="font-serif text-4xl font-extralight  md:text-5xl text-primary">
             Our{" "}
