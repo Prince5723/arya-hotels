@@ -1,216 +1,226 @@
 'use client'
-import { TeamShowcase, TeamMember } from "@/components/ui/team-showcase";
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Menu, X, ChevronRight, MapPin, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
 
 const hotelLocations = [
-    { name: 'Ramnagar', slug: 'ramnagar' },
+  { name: 'Ramnagar', slug: 'ramnagar' },
 ]
 
 const menuItems = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Contact Us', href: '#contact' },
 ]
 
 export const HeroHeader = () => {
-    const [menuState, setMenuState] = React.useState(false)
-    const [scrolled, setScrolled] = React.useState(false)
-    const [hotelsDropdownOpen, setHotelsDropdownOpen] = React.useState(false)
-    const { scrollYProgress } = useScroll()
-    const dropdownRef = React.useRef<HTMLLIElement>(null)
+  const [menuState, setMenuState] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false)
+  const [hotelsDropdownOpen, setHotelsDropdownOpen] = React.useState(false)
+  const { scrollYProgress } = useScroll()
 
-    React.useEffect(() => {
-        const unsubscribe = scrollYProgress.on('change', (latest) => {
-            setScrolled(latest > 0.05)
-        })
-        return () => unsubscribe()
-    }, [scrollYProgress])
+  React.useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (latest) => {
+      setScrolled(latest > 0.05)
+    })
+    return () => unsubscribe()
+  }, [scrollYProgress])
 
-    // Close dropdown when clicking outside
-    React.useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setHotelsDropdownOpen(false)
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
+  return (
+    <header>
+      <nav data-state={menuState && 'active'} className="group fixed z-50 w-full pt-2">
+        <div
+          className={cn(
+            'mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12',
+            scrolled && 'bg-primary/95 backdrop-blur-2xl'
+          )}
+        >
+          <motion.div
+            className={cn(
+              'relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0',
+              scrolled ? 'lg:py-4 text-primary-foreground' : 'lg:py-6 text-primary'
+            )}
+          >
+            {/* Logo */}
+            <Link href="/" className="flex items-center space-x-2 z-10">
+              <Logo className={scrolled ? 'text-primary-foreground' : 'text-primary'} />
+            </Link>
 
-    return (
-        <header>
-            <nav
-                data-state={menuState && 'active'}
-                className="group fixed z-50 w-full pt-2">
-                <div className={cn('mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12', scrolled && 'bg-primary/95 backdrop-blur-2xl')}>
-                    <motion.div
-                        key={1}
-                        className={cn(
-                            'relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0',
-                            scrolled ? 'lg:py-4 text-primary-foreground' : 'lg:py-6 text-primary'
-                        )}>
-                        {/* Logo */}
-                        <Link
-                            href="/"
-                            aria-label="home"
-                            className="flex items-center space-x-2 z-10">
-                            <Logo className={scrolled ? 'text-primary-foreground' : 'text-primary'} />
-                        </Link>
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMenuState(!menuState)}
+              className="relative z-20 -m-2.5 -mr-4 block p-2.5 lg:hidden"
+            >
+              <Menu className="group-data-[state=active]:scale-0 duration-200" />
+              <X className="absolute inset-0 m-auto scale-0 group-data-[state=active]:scale-100 duration-200" />
+            </button>
 
-                        {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setMenuState(!menuState)}
-                            aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                            className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                            <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                            <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                        </button>
-
-                        {/* Desktop Menu Items */}
-                        <div className="hidden lg:flex lg:items-center lg:gap-8 lg:flex-1 lg:justify-center">
-                            <ul className="flex gap-8 text-sm items-center">
-                                {/* Our Hotels Dropdown */}
-                                <li className="relative" ref={dropdownRef}>
-                                    <button
-                                        onClick={() => setHotelsDropdownOpen(!hotelsDropdownOpen)}
-                                        className={cn(scrolled ? 'text-primary-foreground' : 'text-primary', 'hover:text-secondary flex items-center gap-1 duration-150')}
-                                    >
-                                        <span>Our Hotels</span>
-                                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${hotelsDropdownOpen ? 'rotate-180' : ''}`} />
-                                    </button>
-                                    {hotelsDropdownOpen && (
-                                        <div className="absolute top-full left-0 mt-2 w-48 bg-primary-foreground rounded-xl shadow-xl border border-border overflow-hidden z-50">
-                                            <ul className="py-2">
-                                                {hotelLocations.map((location, index) => (
-                                                    <li key={index}>
-                                                        <Link
-                                                            href={`/hotels/${location.slug}`}
-                                            className="block px-4 py-2 text-sm text-primary hover:bg-surface transition-colors duration-150"
-                                                            onClick={() => setHotelsDropdownOpen(false)}
-                                                        >
-                                                            {location.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    )}
-                                </li>
-                                {/* Other Menu Items */}
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className={cn(scrolled ? 'text-primary-foreground' : 'text-primary', 'hover:text-secondary block duration-150')}>
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* CTA Buttons for Desktop - Right Side */}
-                        <div className="hidden lg:flex lg:items-center lg:gap-3">
-                            <Button
-                                asChild
-                                size="sm"
-                                className="h-9 rounded-full px-5 bg-primary-foreground text-primary hover:bg-surface font-semibold"
+            {/* Desktop menu */}
+            <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+              <ul className="flex items-center gap-8 text-sm">
+                <li className="relative">
+                  <button
+                    onClick={() => setHotelsDropdownOpen(!hotelsDropdownOpen)}
+                    className={cn(
+                      scrolled ? 'text-primary-foreground' : 'text-primary',
+                      'hover:text-secondary flex items-center gap-1 duration-150'
+                    )}
+                  >
+                    Our Hotels
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        hotelsDropdownOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  {hotelsDropdownOpen && (
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-primary-foreground rounded-xl shadow-xl border border-border">
+                      <ul className="py-2">
+                        {hotelLocations.map((location) => (
+                          <li key={location.slug}>
+                            <Link
+                              href={`/hotels/${location.slug}`}
+                              className="block px-4 py-2 text-sm text-primary hover:bg-surface"
+                              onClick={() => setHotelsDropdownOpen(false)}
                             >
-                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
-                                    Book Now
-                                </Link>
-                            </Button>
-                            <Button
-                                asChild
-                                size="sm"
-                                variant="outline"
-                                className="h-9 rounded-full px-5 border-2 border-primary-foreground text-primary hover:bg-primary-foreground/10 font-semibold"
-                            >
-                                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
-                                    Partner With Us
-                                </Link>
-                            </Button>
-                        </div>
+                              {location.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+                {menuItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        scrolled ? 'text-primary-foreground' : 'text-primary',
+                        'hover:text-secondary duration-150'
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                        <div className="bg-primary group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-border p-6 shadow-2xl shadow-primary/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
-                            <div className="lg:hidden w-full">
-                                <ul className="space-y-6 text-base">
-                                    {/* Our Hotels Dropdown for Mobile */}
-                                    <li>
-                                        <button
-                                            onClick={() => setHotelsDropdownOpen(!hotelsDropdownOpen)}
-                                        className={cn(scrolled ? 'text-primary-foreground' : 'text-primary-foreground', 'hover:text-secondary flex items-center gap-2 w-full duration-150')}
-                                        >
-                                            <span>Our Hotels</span>
-                                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${hotelsDropdownOpen ? 'rotate-180' : ''}`} />
-                                        </button>
-                                        {hotelsDropdownOpen && (
-                                            <ul className="mt-3 ml-4 space-y-3">
-                                                {hotelLocations.map((location, index) => (
-                                                    <li key={index}>
-                                                        <Link
-                                                            href={`/hotels/${location.slug}`}
-                                                        className={cn(scrolled ? 'text-primary-foreground/80' : 'text-primary-foreground/80', 'hover:text-secondary block duration-150')}
-                                                            onClick={() => {
-                                                                setHotelsDropdownOpen(false)
-                                                                setMenuState(false)
-                                                            }}
-                                                        >
-                                                            {location.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </li>
-                                    {/* Other Menu Items */}
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                className={cn(scrolled ? 'text-primary-foreground' : 'text-primary-foreground', 'hover:text-accent block duration-150')}
-                                                onClick={() => setMenuState(false)}
-                                            >
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                                {/* CTA Buttons for Mobile */}
-                                <div className="flex flex-col gap-3 mt-6">
-                                    <Button
-                                        asChild
-                                        size="sm"
-                                        className="w-full h-10 rounded-full bg-background text-primary hover:bg-surface font-semibold"
-                                    >
-                                        <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer" onClick={() => setMenuState(false)}>
-                                            Book Now
-                                        </Link>
-                                    </Button>
-                                    <Button
-                                        asChild
-                                        size="sm"
-                                        variant="outline"
-                                        className="w-full h-10 rounded-full border-2 border-background text-primary hover:bg-background/10 font-semibold"
-                                    >
-                                        <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer" onClick={() => setMenuState(false)}>
-                                            Partner With Us
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </nav>
-        </header>
-    )
+            {/* Desktop CTA Buttons */}
+            <div className="hidden lg:flex lg:items-center lg:gap-3">
+              <Button
+                asChild
+                size="sm"
+                className="h-9 rounded-full px-5 bg-primary-foreground text-primary hover:bg-surface  font-semibold"
+              >
+                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+                  Book Now
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="h-9 rounded-full px-5 border-2 border-primary-foreground text-primary hover:bg-primary-foreground/10 hover:text-black font-semibold"
+              >
+                <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
+                  Partner With Us
+                </Link>
+              </Button>
+            </div>
+
+            {/* Mobile menu */}
+            <div className="bg-primary group-data-[state=active]:block hidden w-full rounded-3xl p-6 lg:hidden">
+              <ul className="space-y-6 text-base">
+                <li>
+                  <button
+                    onClick={() => setHotelsDropdownOpen(!hotelsDropdownOpen)}
+                    className="flex items-center gap-2 w-full text-primary-foreground"
+                  >
+                    Our Hotels
+                    <ChevronDown
+                      className={`transition-transform ${
+                        hotelsDropdownOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {hotelsDropdownOpen && (
+                    <ul className="mt-3 ml-4 space-y-3">
+                      {hotelLocations.map((location) => (
+                        <li key={location.slug}>
+                          <Link
+                            href={`/hotels/${location.slug}`}
+                            className="text-primary-foreground/80 hover:text-secondary block duration-150"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setHotelsDropdownOpen(false)
+                              setMenuState(false)
+                            }}
+                          >
+                            {location.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+
+                {menuItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-primary-foreground"
+                      onClick={() => setMenuState(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Mobile CTA Buttons */}
+              <div className="flex flex-col gap-3 mt-6">
+                <Button
+                  asChild
+                  size="sm"
+                  className="w-full h-10 rounded-full bg-background text-primary hover:bg-surface font-semibold"
+                >
+                  <Link
+                    href="https://wa.me/919319020033"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuState(false)}
+                  >
+                    Book Now
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="w-full h-10 rounded-full border-2 border-background text-primary hover:bg-background/10 font-semibold"
+                >
+                  <Link
+                    href="https://wa.me/919319020033"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMenuState(false)}
+                  >
+                    Partner With Us
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </nav>
+    </header>
+  )
 }
-
 const Logo = ({ className }: { className?: string }) => {
     return (
         <svg
