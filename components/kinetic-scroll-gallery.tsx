@@ -1,41 +1,33 @@
 "use client";
 
 import React from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 
 // Ramnagar hotel images from the public directory
 const images = [
     "/bedroom1-ramnagar.jpeg",
-    "/bedroom2-ramnagar.jpeg",
     "/bedroom3-ramnagar.jpeg",
-    "/dining-area-ramnagar.jpeg",
     "/chilling-ramnagar.jpeg",
     "/terrace-ramnagar.jpeg",
-    "/washroom-ramnagar.jpeg",
-    "/IMG_4627.jpg",
     "/IMG_4628.jpg",
     "/IMG_4631.jpg",
     "/IMG_4632.jpg",
-    "/IMG_4633.jpg",
     "/IMG_4634.jpg",
-    "/IMG_4635.jpg",
-    "/IMG_4638.jpg",
     "/IMG_4639.jpg",
-    "/IMG_4640.jpg",
     "/IMG_4642.jpg",
-    "/IMG_4643.jpg",
-    "/IMG_4645.jpg",
-    "/IMG_4646.jpg",
     "/IMG_4648.jpg",
     "/IMG_4677.jpg",
-    "/IMG_4681.jpg",
     "/IMG_4694.jpg",
     "/IMG_4696.jpg",
     "/IMG_4702.jpg",
-    "/IMG_4703.jpg",
 ];
 
-const KineticGridItem = ({ image, scrollVelocity }) => {
+interface KineticGridItemProps {
+    image: string;
+    scrollVelocity: MotionValue<number>;
+}
+
+const KineticGridItem = ({ image, scrollVelocity }: KineticGridItemProps) => {
     // Smooth the velocity value for a more gradual effect
     const smoothedVelocity = useSpring(scrollVelocity, {
         mass: 0.1,
@@ -84,7 +76,7 @@ export default function KineticScrollGallery() {
                         Arya Ramnagar Gallery
                     </h2>
                     <p className="text-foreground/80 max-w-2xl mx-auto">
-                        Scroll to explore moments from our Ramnagar property. Faster scrolling creates a dynamic kinetic effect across the grid.
+                        Scroll to explore moments from our Ramnagar property.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -75,7 +75,7 @@ export default function PartnerWithUs() {
                                     ))}
                                 </div>
                                 <span className="text-sm font-medium text-foreground ml-2">
-                                    500+ partners have joined
+                                    We are rapidly growing
                                 </span>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ export default function PartnerWithUs() {
                                 className="h-14 rounded-full px-10 bg-primary text-primary-foreground hover:bg-primary/90 text-lg font-semibold shadow-lg"
                             >
                                 <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
-                                    <span>Start Your Partnership</span>
+                                    <span>Get in touch</span>
                                     <ChevronRight className="ml-2 size-5" />
                                 </Link>
                             </Button>

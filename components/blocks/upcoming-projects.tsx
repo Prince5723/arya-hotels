@@ -29,7 +29,7 @@ const DummyContent = () => {
           >
             <p className="text-foreground text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-secondary">
-                The first rule of Apple club is that you boast about Apple club.
+                The first rule of Fight club is that you dont talk about Fight club.
               </span>{" "}
               Keep a journal, quickly jot down a grocery list, and take amazing
               class notes. Want to convert those notes to text? No problem.
@@ -37,7 +37,7 @@ const DummyContent = () => {
               thought.
             </p>
             <img
-              src="https://assets.aceternity.com/macbook.png"
+              src="https://plus.unsplash.com/premium_photo-1687710306880-95c72d9a19c5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vZGVybiUyMGZhcm0lMjBob3VzZXxlbnwwfDF8MHx8fDA%3D"
               alt="Macbook mockup from Aceternity UI"
               height="500"
               width="500"
@@ -52,21 +52,21 @@ const DummyContent = () => {
 
 const data = [
   {
+    category: "Saidpur Farm House",
+    title: "An escape from the city to nature",
+    src: "https://plus.unsplash.com/premium_photo-1687710306880-95c72d9a19c5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vZGVybiUyMGZhcm0lMjBob3VzZXxlbnwwfDF8MHx8fDA%3D",
+    content: <DummyContent />,
+  },
+  {
     category: "Varanasi",
-    title: "Explore the beauty of Varanasi",
+    title: "Explore culture with Arya Hotels",
     src: "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFuYXJhc3xlbnwwfDF8MHx8fDA%3D",
     content: <DummyContent />,
   },
   {
     category: "Jaipur",
-    title: "Explore the beauty of Jaipur",
+    title: "Take the royal route with Arya Hotels",
     src: "https://plus.unsplash.com/premium_photo-1678654259883-4d3cdcc0c853?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGphaXB1cnxlbnwwfDF8MHx8fDA%3D",
-    content: <DummyContent />,
-  },
-  {
-    category: "Manali",
-    title: "Explore the beauty of Manali",
-    src: "https://images.unsplash.com/photo-1594102552386-793e5a27ad10?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhpbWFjaGFsfGVufDB8MXwwfHx8MA%3D%3D",
     content: <DummyContent />,
   },
 ];

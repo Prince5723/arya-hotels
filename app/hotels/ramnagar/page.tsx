@@ -5,12 +5,16 @@ import Testimonials from "@/components/blocks/testimonials";
 import KineticScrollGallery from "@/components/kinetic-scroll-gallery";
 import { ContactPage } from "@/components/ui/contact-page";
 import Footer from "@/components/blocks/footer";
+import HeroHome from "@/components/blocks/hero-home";
+import { HeroHeader } from "@/components/blocks/navbar";
+
 
 
 export default function HotelPage() {
   return (
     <>
-      <HeroSection />
+      {/* <HeroSection /> */}
+      <HeroHeader/>
       <div className="flex flex-col gap-12 md:gap-16 lg:gap-20">
         <HeroHotelPage/>
         <FeatureHotelDemo/>

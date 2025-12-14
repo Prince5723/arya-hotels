@@ -6,7 +6,7 @@ function Hero() {
   return (
     <div className="w-full py-16 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-8 md:gap-10 items-center md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
             <div>
               <Badge variant="outline">We&apos;re excited to host you</Badge>
@@ -20,18 +20,32 @@ function Hero() {
               </p>
             </div>
             <div className="flex flex-row gap-4">
-              <Button size="lg" className="gap-4" variant="outline">
-                Jump on a call <PhoneCall className="w-4 h-4" />
-              </Button>
-              <Button size="lg" className="gap-4">
-                Sign up here <MoveRight className="w-4 h-4" />
-              </Button>
-            </div>
+  <a
+    href="https://wa.me/9319020033"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button size="lg" className="gap-4">
+      Book Now <MoveRight className="w-4 h-4" />
+    </Button>
+  </a>
+
+  <a
+    href="https://wa.me/9319020033"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button size="lg" className="gap-4" variant="outline">
+      Partner with us <PhoneCall className="w-4 h-4" />
+    </Button>
+  </a>
+</div>
+
           </div>
           <div className="grid grid-cols-2 gap-8">
-            <div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{backgroundImage: 'url(/IMG_4648.jpg)'}}></div>
-<div className="bg-muted rounded-md row-span-2 bg-cover bg-center" style={{backgroundImage: 'url(/IMG_4634.jpg)'}}></div>
-<div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{backgroundImage: 'url(/IMG_4642.jpg)'}}></div>
+            <div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{ backgroundImage: 'url(/IMG_4648.jpg)' }}></div>
+            <div className="bg-muted rounded-md row-span-2 bg-cover bg-center" style={{ backgroundImage: 'url(/IMG_4634.jpg)' }}></div>
+            <div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{ backgroundImage: 'url(/IMG_4642.jpg)' }}></div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ const HotelData = {
           "Savor delicious meals prepared by our expert chefs. Our dining area offers a warm, inviting atmosphere where you can enjoy local and international cuisine made with fresh, quality ingredients.",
         buttonText: "View Menu",
         imageSrc:
-          "/dining-area-ramnagar.jpeg",
+          "/IMG_4648.jpg",
         imageAlt: "Dining Area",
       },
     },
@@ -63,7 +63,7 @@ const HotelData = {
           "Unwind at our elegant bar with a selection of fine beverages, cocktails, and spirits. The perfect place to relax after a day of exploring or to socialize with fellow guests in a sophisticated setting.",
         buttonText: "Visit Bar",
         imageSrc:
-          "/terrace-ramnagar.jpeg",
+          "/IMG_4642.jpg",
         imageAlt: "Bar",
       },
     },
