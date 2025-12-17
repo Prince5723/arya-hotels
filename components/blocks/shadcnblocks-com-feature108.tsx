@@ -83,9 +83,9 @@ const Feature108 = ({
   return (
     <section className=" px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <div className="flex flex-col items-center gap-4 text-center max-w-xl mx-auto">
           <Badge variant="outline">{badge}</Badge>
-          <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
+          <h1 className="text-3xl font-semibold md:text-4xl">
             {heading}
           </h1>
           <p className="text-foreground/80">{description}</p>
@@ -119,17 +119,11 @@ const Feature108 = ({
                   <p className="text-foreground/80 lg:text-lg">
                     {tab.content.description}
                   </p>
-                  {tab.content.buttonText === "Book Now" ? (
-                    <Button asChild className="mt-2.5 w-fit gap-2" size="lg">
-                      <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
-                        {tab.content.buttonText}
-                      </Link>
-                    </Button>
-                  ) : (
-                    <Button className="mt-2.5 w-fit gap-2" size="lg">
+                  <Button asChild className="mt-2.5 w-fit gap-2" size="lg">
+                    <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
                       {tab.content.buttonText}
-                    </Button>
-                  )}
+                    </Link>
+                  </Button>
                 </div>
                 <img
                   src={tab.content.imageSrc}

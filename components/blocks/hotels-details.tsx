@@ -4,8 +4,8 @@ import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108"
 
 const HotelData = {
   badge: "Our Amenities",
-  heading: "Stay in the Heart of Ramnagar",
-  description: "Experience comfort and luxury with our premium facilities.",
+  heading: "Stay at Aarya Hotels Ramnagar",
+  description: "Discover a perfect blend of comfort, elegance, and convenience at Aarya Hotels Ramnagar. Located in the heart of the city, our hotel offers premium facilities, well-appointed spaces, and attentive service to ensure a relaxing and seamless stay. Whether you are traveling for leisure or business, we provide a welcoming environment designed to make every moment comfortable and memorable.",
   tabs: [
     {
       value: "tab-1",
@@ -28,9 +28,9 @@ const HotelData = {
       label: "Dining",
       content: {
         badge: "Culinary Excellence",
-        title: "Exquisite Dining Experience",
+        title: "Our Specialty Restaurant: Bhojshala",
         description:
-          "Savor delicious meals prepared by our expert chefs. Our dining area offers a warm, inviting atmosphere where you can enjoy local and international cuisine made with fresh, quality ingredients.",
+          "Step into Bhojshala, our specialty restaurant, where culinary tradition meets thoughtful craftsmanship. Experience a thoughtfully curated menu featuring authentic local delicacies alongside select international favorites, each prepared by expert chefs with fresh, high-quality ingredients. Set in a refined and welcoming ambiance, Bhojshala offers a dining experience that celebrates rich flavors, attentive service, and the joy of unhurried, memorable meals.",
         buttonText: "View Menu",
         imageSrc:
           "/IMG_4648.jpg",

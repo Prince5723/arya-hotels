@@ -52,20 +52,20 @@ const DummyContent = () => {
 
 const data = [
   {
-    category: "Saidpur Farm House",
+    category: "Saidpur House Farm Stay",
     title: "An escape from the city to nature",
     src: "https://plus.unsplash.com/premium_photo-1687710306880-95c72d9a19c5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vZGVybiUyMGZhcm0lMjBob3VzZXxlbnwwfDF8MHx8fDA%3D",
     content: <DummyContent />,
   },
   {
-    category: "Varanasi",
-    title: "Explore culture with Arya Hotels",
-    src: "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmFuYXJhc3xlbnwwfDF8MHx8fDA%3D",
+    category: "Vrindavan",
+    title: "Explore culture with Aarya Hotels",
+    src: "https://images.unsplash.com/photo-1707938186244-b75b89aede40?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHZyaW5kYXZhbnxlbnwwfHwwfHx8MA%3D%3D",
     content: <DummyContent />,
   },
   {
     category: "Jaipur",
-    title: "Take the royal route with Arya Hotels",
+    title: "Take the royal route with Aarya Hotels",
     src: "https://plus.unsplash.com/premium_photo-1678654259883-4d3cdcc0c853?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGphaXB1cnxlbnwwfDF8MHx8fDA%3D",
     content: <DummyContent />,
   },

@@ -25,7 +25,7 @@ const TeamShowcase = React.forwardRef<HTMLDivElement, TeamShowcaseProps>(
     {
       title = "DISCOVER STAYS THAT STAY WITH YOU",
       description =
-        "Blending tradition with modern luxury, AARYA Hotels creates meaningful stays designed for comfort, connection, and lasting impressions.",
+        "Blending tradition with modern luxury, Aarya Hotels creates meaningful stays designed for comfort, connection, and lasting impressions.",
       buttonText = "FIND YOUR DEVELOPER",
       members,
       ...props
