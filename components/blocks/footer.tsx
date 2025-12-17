@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" aria-label="home" className="flex items-center space-x-2">
               <div className="rounded-lg p-2 transition-all duration-300 overflow-hidden bg-black/95 backdrop-blur-md shadow-xl border border-white/10">
-                <div className="relative w-32 h-10 sm:w-36 sm:h-11">
+                <div className="relative w-28 h-9 sm:w-36 sm:h-11">
                   <Image
                     src="/Aarya-logo-Golden.svg"
                     alt="Aarya Hotels"
@@ -73,8 +73,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
-                <a href="tel:+929319020033" className="text-sm text-foreground/80 hover:text-primary transition-colors">
-                  +92 9319020033
+                <a href="tel:+919319020033" className="text-sm text-foreground/80 hover:text-primary transition-colors">
+                  +91 9319020033
                 </a>
               </li>
               <li className="flex items-center gap-3">

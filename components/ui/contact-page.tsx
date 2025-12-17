@@ -8,8 +8,7 @@ import {
 	Mail,
 	MapPin,
 	Phone,
-	GithubIcon,
-	TwitterIcon,
+	Facebook,
 	LinkedinIcon,
 	InstagramIcon,
 } from 'lucide-react';
@@ -21,23 +20,18 @@ const APP_PHONE = '+92 9319020033';
 export function ContactPage() {
 	const socialLinks = [
 		{
-			icon: GithubIcon,
-			href: 'https://github.com/sshahaider',
-			label: 'GitHub',
-		},
-		{
-			icon: TwitterIcon,
-			href: 'https://twitter.com/sshahaider',
-			label: 'Twitter',
+			icon: Facebook,
+			href: 'https://facebook.com/aaryahotels',
+			label: 'Facebook',
 		},
 		{
 			icon: LinkedinIcon,
-			href: 'https://linkedin.com/in/sshahaider',
+			href: 'https://linkedin.com/company/aaryahotels',
 			label: 'LinkedIn',
 		},
 		{
 			icon: InstagramIcon,
-			href: 'https://instagram.com/sshahaider',
+			href: 'https://instagram.com/aaryahotels',
 			label: 'Instagram',
 		},
 	];
@@ -78,8 +72,8 @@ export function ContactPage() {
 					</Box>
 					<Box
 						icon={MapPin}
-						title="Office"
-						description="Drop by our office for a chat."
+						title="Arya Rampur Location"
+						description="Drop by our hotel for a chat."
 					>
 						<span className="font-mono text-base font-medium tracking-wide">
 							Basai ramnagar, Kashipur, Road, Ramnagar, Uttarakhand 244715
@@ -88,7 +82,7 @@ export function ContactPage() {
 					<Box
 						icon={Phone}
 						title="Phone"
-						description="We're available Mon-Fri, 9am-5pm."
+						description="We're available 24/7."
 						className="border-b-0 md:border-r-0"
 					>
 						<div>

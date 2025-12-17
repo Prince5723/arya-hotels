@@ -56,7 +56,9 @@ const TeamShowcase = React.forwardRef<HTMLDivElement, TeamShowcaseProps>(
     return (
       <section
         ref={ref}
-        className={cn("w-full bg-background text-foreground py-16 px-4 md:px-8")}
+        className={cn(
+          "w-full bg-background text-foreground pt-36 md:pt-26 pb-16 px-4 md:pb-16 md:px-8"
+        )}
         {...props}
       >
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center mt-8 md:mt-24">
