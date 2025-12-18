@@ -12,18 +12,24 @@ const IMAGES_1 = [
   "/IMG_4631.jpg",
   "/IMG_4642.jpg",
   "/IMG_4640.jpg",
-  "https://images.unsplash.com/photo-1573455494060-c5595004fb6c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dG9reW98ZW58MHwwfDB8fHwy",
+  "/IMG_4634.jpg",
+  "/IMG_4635.jpg",
+  "/IMG_4638.jpg",
 ]
 const IMAGES_2 = [
   "/IMG_4696.jpg",
   "/chilling-ramnagar.jpeg",
   "/IMG_4702.jpg",
   "/IMG_4681.jpg",
+  "/terrace-ramnagar.jpeg",
+  "/dining-area-ramnagar.jpeg",
 ]
 const IMAGES_3 = [
   "/IMG_4632.jpg",
   "/IMG_4694.jpg",
-  "https://content3.jdmagicbox.com/comp/nainital/j9/9999p5942.5942.221013185632.y2j9/catalogue/a3-queen-corbett-corbett-national-park-corbett-hotels-mxbhgp28sh.jpg",
+  "/bedroom1-ramnagar.jpeg",
+  "/bedroom2-ramnagar.jpeg",
+  "/bedroom3-ramnagar.jpeg",
   "https://images.unsplash.com/photo-1608875004752-2fdb6a39ba4c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ]
 
