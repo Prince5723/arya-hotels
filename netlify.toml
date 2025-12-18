@@ -1,0 +1,57 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# -----------------------------
+# CANONICAL DOMAIN REDIRECTS
+# -----------------------------
+
+# Redirect .in → .com (www and non-www)
+[[redirects]]
+  from = "https://www.aaryahotels.in/*"
+  to = "https://aarya-hotels.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://aaryahotels.in/*"
+  to = "https://aarya-hotels.com/:splat"
+  status = 301
+  force = true
+
+# -----------------------------
+# FORCE HTTPS
+# -----------------------------
+
+[[redirects]]
+  from = "http://aarya-hotels.com/*"
+  to = "https://aarya-hotels.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.aarya-hotels.com/*"
+  to = "https://aarya-hotels.com/:splat"
+  status = 301
+  force = true
+
+# -----------------------------
+# SECURITY HEADERS
+# -----------------------------
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# -----------------------------
+# CACHE STATIC ASSETS
+# -----------------------------
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
