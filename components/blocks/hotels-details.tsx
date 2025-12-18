@@ -1,6 +1,6 @@
 import { Bed, UtensilsCrossed, Activity, Wine } from "lucide-react";
 
-import { Feature108 } from "@/components/blocks/shadcnblocks-com-feature108"
+import Feature108  from "@/components/blocks/shadcnblocks-com-feature108"
 
 const HotelData = {
   badge: "Our Amenities",
@@ -8,19 +8,18 @@ const HotelData = {
   description: "Discover a perfect blend of comfort, elegance, and convenience at Aarya Hotels Ramnagar. Located in the heart of the city, our hotel offers premium facilities, well-appointed spaces, and attentive service to ensure a relaxing and seamless stay. Whether you are traveling for leisure or business, we provide a welcoming environment designed to make every moment comfortable and memorable.",
   tabs: [
     {
-      value: "tab-1",
-      icon: <Bed className="h-auto w-4 shrink-0" />,
-      label: "Bedroom",
-      content: {
-        badge: "Comfortable Stay",
-        title: "Luxurious Bedrooms for Your Comfort",
-        description:
-          "Relax in our spacious, well-appointed bedrooms featuring modern amenities, premium bedding, and elegant decor. Each room is designed to provide the perfect blend of comfort and style for a restful stay.",
-        buttonText: "Book Now",
-        imageSrc:
-          "/bedroom1-ramnagar.jpeg",
-        imageAlt: "Bedroom",
-      },
+  value: "tab-1",
+  icon: <Bed className="h-auto w-4 shrink-0" />,
+  label: "Bedroom",
+  content: {
+    badge: "Luxury Accommodation",
+    title: "Premium Rooms Designed for Rest and Privacy",
+    description:
+      "Experience luxury accommodation in Ramnagar with our thoughtfully designed rooms offering plush bedding, modern interiors, high-speed Wi-Fi, climate control, and ample workspace. Every detail is crafted to ensure deep rest, privacy, and comfort, making Aarya Hotels Ramnagar ideal for both leisure travelers and business guests.",
+    buttonText: "Check Availability",
+    imageSrc: "/bedroom1-ramnagar.jpeg",
+    imageAlt: "Luxury hotel bedroom at Aarya Hotels Ramnagar",
+  },
     },
     {
       value: "tab-2",
@@ -38,34 +37,33 @@ const HotelData = {
       },
     },
     {
-      value: "tab-3",
-      icon: <Activity className="h-auto w-4 shrink-0" />,
-      label: "Activities",
-      content: {
-        badge: "Entertainment & Recreation",
-        title: "Engaging Activities for All Ages",
-        description:
-          "Make the most of your stay with our range of activities. From outdoor adventures to indoor entertainment, we offer something for everyone to enjoy during their visit to Ramnagar.",
-        buttonText: "Explore Activities",
-        imageSrc:
-          "/chilling-ramnagar.jpeg",
-        imageAlt: "Activities",
-      },
+  value: "tab-3",
+  icon: <Activity className="h-auto w-4 shrink-0" />,
+  label: "Activities",
+  content: {
+    badge: "Experiences & Leisure",
+    title: "Curated Experiences for a Complete Stay",
+    description:
+      "Enhance your stay with curated indoor and outdoor experiences designed for relaxation and recreation. From peaceful lounging spaces to engaging local activities around Ramnagar, our hotel ensures guests enjoy a balanced stay that blends comfort, exploration, and leisure.",
+    buttonText: "Discover Experiences",
+    imageSrc: "/chilling-ramnagar.jpeg",
+    imageAlt: "Leisure activities at Aarya Hotels Ramnagar",
+  },
     },
     {
-      value: "tab-4",
-      icon: <Wine className="h-auto w-4 shrink-0" />,
-      label: "Bar",
-      content: {
-        badge: "Relax & Unwind",
-        title: "Premium Bar Experience",
-        description:
-          "Unwind at our elegant bar with a selection of fine beverages, cocktails, and spirits. The perfect place to relax after a day of exploring or to socialize with fellow guests in a sophisticated setting.",
-        buttonText: "Visit Bar",
-        imageSrc:
-          "/IMG_4642.jpg",
-        imageAlt: "Bar",
-      },
+  value: "tab-4",
+  icon: <Wine className="h-auto w-4 shrink-0" />,
+  label: "Bar",
+  content: {
+    badge: "Exclusive Lounge",
+    title: "Sophisticated Bar for Evenings That Unwind",
+    description:
+      "Indulge in a refined bar experience featuring premium spirits, handcrafted cocktails, and a relaxed upscale ambiance. Whether you are unwinding after a long day or enjoying a quiet evening, our bar offers the perfect setting for comfort, conversation, and indulgence.",
+    buttonText: "Explore Bar",
+    imageSrc: "/IMG_4642.jpg",
+    imageAlt: "Luxury hotel bar at Aarya Hotels Ramnagar",
+  },
+
     },
   ],
 };

@@ -1,142 +1,188 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-import { Layout, Pointer, Zap } from "lucide-react";
-import Link from "next/link";
-
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 interface TabContent {
-  badge: string;
-  title: string;
-  description: string;
-  buttonText: string;
-  imageSrc: string;
-  imageAlt: string;
+  badge: string
+  title: string
+  description: string
+  buttonText: string
+  imageSrc: string
+  imageAlt: string
 }
 
 interface Tab {
-  value: string;
-  icon: React.ReactNode;
-  label: string;
-  content: TabContent;
+  value: string
+  icon: React.ReactNode
+  label: string
+  content: TabContent
 }
 
 interface Feature108Props {
-  badge?: string;
-  heading?: string;
-  description?: string;
-  tabs?: Tab[];
+  badge?: string
+  heading?: string
+  description?: string
+  tabs: Tab[]
 }
 
-const Feature108 = ({
-  badge = "shadcnblocks.com",
-  heading = "A Collection of Components Built With Shadcn & Tailwind",
-  description = "Join us to build flawless web solutions.",
-  tabs = [
-    {
-      value: "tab-1",
-      icon: <Zap className="h-auto w-4 shrink-0" />,
-      label: "Boost Revenue",
-      content: {
-        badge: "Modern Tactics",
-        title: "Make your site a true standout.",
-        description:
-          "Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.",
-        buttonText: "See Plans",
-        imageSrc:
-          "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
-        imageAlt: "placeholder",
-      },
-    },
-    {
-      value: "tab-2",
-      icon: <Pointer className="h-auto w-4 shrink-0" />,
-      label: "Higher Engagement",
-      content: {
-        badge: "Expert Features",
-        title: "Boost your site with top-tier design.",
-        description:
-          "Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.",
-        buttonText: "See Tools",
-        imageSrc:
-          "https://shadcnblocks.com/images/block/placeholder-dark-2.svg",
-        imageAlt: "placeholder",
-      },
-    },
-    {
-      value: "tab-3",
-      icon: <Layout className="h-auto w-4 shrink-0" />,
-      label: "Stunning Layouts",
-      content: {
-        badge: "Elite Solutions",
-        title: "Build an advanced web experience.",
-        description:
-          "Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.",
-        buttonText: "See Options",
-        imageSrc:
-          "https://shadcnblocks.com/images/block/placeholder-dark-3.svg",
-        imageAlt: "placeholder",
-      },
-    },
-  ],
-}: Feature108Props) => {
+const AUTO_INTERVAL = 9000
+
+export default function Feature108({
+  badge = 'Features',
+  heading = 'Designed for clarity on every screen',
+  description = 'Auto-rotating, touch-friendly, and readable from mobile to desktop.',
+  tabs
+}: Feature108Props) {
+  const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  const progressRef = useRef<HTMLDivElement | null>(null)
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    if (paused || tabs.length === 0) return
+
+    if (progressRef.current) {
+      progressRef.current.style.transition = 'none'
+      progressRef.current.style.width = '0%'
+
+      requestAnimationFrame(() => {
+        if (!progressRef.current) return
+        progressRef.current.style.transition = `width ${AUTO_INTERVAL}ms linear`
+        progressRef.current.style.width = '100%'
+      })
+    }
+
+    timerRef.current = setTimeout(() => {
+      setActive((prev) => (prev + 1) % tabs.length)
+    }, AUTO_INTERVAL)
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [active, paused, tabs.length])
+
+  if (!tabs || tabs.length === 0) return null
+
   return (
-    <section className=" px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center gap-4 text-center max-w-xl mx-auto">
-          <Badge variant="outline">{badge}</Badge>
-          <h1 className="text-3xl font-semibold md:text-4xl">
+    <section className="px-4 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <Badge variant="outline" className="mb-4">
+            {badge}
+          </Badge>
+          <h2 className="text-3xl font-semibold sm:text-4xl">
             {heading}
-          </h1>
-          <p className="text-foreground/80">{description}</p>
+          </h2>
+          <p className="mt-3 text-foreground/80">
+            {description}
+          </p>
         </div>
-        <Tabs defaultValue={tabs[0].value} className="mt-8">
-          <TabsList className="mx-auto w-full max-w-screen-xl flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
-            {tabs.map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-foreground/80 data-[state=active]:bg-muted data-[state=active]:text-primary"
-              >
-                {tab.icon} {tab.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
-            {tabs.map((tab) => (
-              <TabsContent
-                key={tab.value}
-                value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
-              >
-                <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
-                    {tab.content.badge}
-                  </Badge>
-                  <h3 className="text-3xl font-semibold lg:text-5xl">
-                    {tab.content.title}
-                  </h3>
-                  <p className="text-foreground/80 lg:text-lg">
-                    {tab.content.description}
-                  </p>
-                  <Button asChild className="mt-2.5 w-fit gap-2" size="lg">
-                    <Link href="https://wa.me/919319020033" target="_blank" rel="noopener noreferrer">
-                      {tab.content.buttonText}
-                    </Link>
-                  </Button>
-                </div>
-                <img
-                  src={tab.content.imageSrc}
-                  alt={tab.content.imageAlt}
-                  className="rounded-xl"
-                />
-              </TabsContent>
-            ))}
+
+        {/* Tabs */}
+        <div className="mb-10 flex gap-2 overflow-x-auto px-1 pb-2 sm:justify-center sm:overflow-visible">
+          {tabs.map((tab, i) => (
+            <button
+              key={tab.value}
+              onClick={() => setActive(i)}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              className={cn(
+                'relative flex shrink-0 items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition',
+                active === i
+                  ? 'bg-muted text-primary'
+                  : 'text-foreground/80 hover:text-foreground'
+              )}
+            >
+              {tab.icon}
+              <span className="whitespace-nowrap">{tab.label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Content */}
+        <div
+          className="relative overflow-hidden rounded-2xl bg-muted/50 p-6 sm:p-10 cursor-pointer"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onClick={(e) => {
+            const target = e.target as HTMLElement
+            // don't change slide when clicking interactive elements inside (links/buttons)
+            if (target.closest('a,button')) return
+            setActive((prev) => (prev + 1) % tabs.length)
+            setPaused(false)
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault()
+              setActive((prev) => (prev + 1) % tabs.length)
+              setPaused(false)
+            }
+          }}
+          tabIndex={0}
+          aria-label="Next slide"
+        >
+          {/* Progress bar */}
+          <div className="absolute left-0 top-0 h-1 w-full bg-muted">
+            <div ref={progressRef} className="h-full bg-primary" />
           </div>
-        </Tabs>
+
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            {/* Text */}
+            <div className="space-y-5">
+              <Badge variant="secondary" className="w-fit">
+                {tabs[active].content.badge}
+              </Badge>
+              <h3 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">
+                {tabs[active].content.title}
+              </h3>
+              <p className="max-w-prose text-foreground/80">
+                {tabs[active].content.description}
+              </p>
+              <Button asChild size="lg" className="mt-2">
+                <Link
+                  href="https://wa.me/919319020033"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {tabs[active].content.buttonText}
+                </Link>
+              </Button>
+            </div>
+
+            {/* Image */}
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-background">
+              <Image
+                src={tabs[active].content.imageSrc}
+                alt={tabs[active].content.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="mt-6 flex justify-center gap-2">
+          {tabs.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={cn(
+                'h-2 rounded-full transition-all',
+                active === i ? 'w-8 bg-primary' : 'w-2 bg-foreground/60 hover:bg-foreground/90'
+              )}
+              aria-label={`Go to tab ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
-
-export { Feature108 };
+  )
+}
