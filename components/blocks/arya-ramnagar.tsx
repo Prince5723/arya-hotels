@@ -41,13 +41,13 @@ export const AryaRamnagar = () => {
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-extralight text-primary">
             Our{" "}
             <span className="font-serif font-extralight text-primary">
-Ramnagar(Jim Corbett) Hotel
+ Jim Corbett (Ramnagar) Hotel
             </span>
           </h1>
         </ContainerAnimated>
         <ContainerAnimated>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-extralight text-primary">
-            is now operational
+            is ready to host you
           </h1>
         </ContainerAnimated>
 

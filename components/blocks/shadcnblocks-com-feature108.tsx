@@ -4,6 +4,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import {
+  PawPrint,
+  Leaf,
+  Car,
+  Home,
+  Mountain,
+  Coffee,
+  Wifi, 
+  Snowflake 
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface TabContent {
@@ -182,6 +192,39 @@ export default function Feature108({
             />
           ))}
         </div>
+
+        {/* Features & Amenities */}
+<div className="mt-24">
+  <h3 className="mb-12 text-center text-3xl font-semibold">
+    Features and Amenities
+  </h3>
+
+  <div className="grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-3 lg:grid-cols-3">
+    {[
+      { icon: Mountain, label: 'Panoramic Kosi River View' },
+      { icon: PawPrint, label: 'Close to Jim Corbett Wildlife Sanctuary' },
+      { icon: Coffee, label: 'Vegetarian Multi-Cuisine Restaurants' },
+      { icon: Car, label: 'Safari to Dhikala Gate' },
+      // { icon: Wifi, label: 'High-Speed Wi-Fi' },
+{ icon: Snowflake, label: 'Air-Conditioned Rooms' },
+      { icon: Home, label: 'Free Parking' }
+    ].map((item, i) => {
+      const Icon = item.icon
+      return (
+        <div
+          key={i}
+          className="flex flex-col items-center text-center text-foreground/90"
+        >
+          <Icon className="mb-3 h-8 w-8" />
+          <p className="max-w-[180px] text-sm">
+            {item.label}
+          </p>
+        </div>
+      )
+    })}
+  </div>
+</div>
+
       </div>
     </section>
   )

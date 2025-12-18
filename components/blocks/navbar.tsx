@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion } from 'motion/react'
 
@@ -22,19 +21,18 @@ export const HeroHeader = () => {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-primary/95 shadow-lg backdrop-blur-sm">
-      <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6 lg:px-8">
+      <nav className="mx-auto flex h-[80px] md:h-[100px] max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="relative z-20 flex items-center">
-          <div className="rounded-lg p-2">
-            <div className="relative h-9 w-28 sm:h-11 sm:w-36">
-              <Image
-                src="/Aarya-logo-Golden.svg"
-                alt="Aarya Hotels"
-                fill
-                className="object-contain scale-125"
-                priority
-              />
-            </div>
+          <div className="relative h-12 w-44 sm:h-14 sm:w-56 lg:h-16 lg:w-64">
+            <Image
+              src="/Aarya-logo-Golden.svg"
+              alt="Aarya Hotels"
+              fill
+              priority
+              className="object-contain object-center scale-200 sm:scale-200 lg:scale-200"
+            />
+
           </div>
         </Link>
 
@@ -103,7 +101,7 @@ export const HeroHeader = () => {
           initial={false}
           animate={menuState ? { x: 0 } : { x: '100%' }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed right-0 top-[72px] z-10 h-[calc(100vh-72px)] w-full overflow-y-auto bg-primary px-6 py-8 sm:max-w-sm lg:hidden"
+          className="fixed right-0 top-[80px] z-10 h-[calc(100vh-80px)] w-full overflow-y-auto bg-primary px-6 py-8 sm:max-w-sm lg:hidden"
         >
           <div className="space-y-6">
             <div>
