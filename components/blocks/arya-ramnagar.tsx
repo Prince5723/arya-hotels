@@ -34,7 +34,7 @@ export const AryaRamnagar = () => {
         <ContainerAnimated>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-extralight text-primary">
             Our{" "}
-            <span className="font-serif font-extralight text-secondary">
+            <span className="font-serif font-extralight text-primary">
 Ramnagar(Jim Corbett) Hotel
             </span>
           </h1>
