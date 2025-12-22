@@ -7,6 +7,7 @@ import Testimonials from "@/components/blocks/testimonials";
 import KineticScrollGallery from "@/components/kinetic-scroll-gallery";
 import { ContactPage } from "@/components/ui/contact-page";
 import Footer from "@/components/blocks/footer";
+import HotelLocationMapSection from "@/components/blocks/map";
 
 /* ---------- SEO METADATA ---------- */
 
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AARYA Hotel Ramnagar | Luxury Hotel Near Jim Corbett",
     description:
-      "Stay at AARYA Hotel Ramnagar, a luxury hotel near Jim Corbett National Park. Ideal for leisure, adventure, and peaceful getaways.",
+      "Stay at Aarya Hotel Ramnagar, a luxury hotel near Jim Corbett National Park. Ideal for leisure, adventure, and peaceful getaways.",
     url: "https://aarya-hotels.com/hotels/ramnagar",
     siteName: "AARYA Hotels & Resorts",
     locale: "en_IN",
@@ -52,6 +53,7 @@ export default function HotelPage() {
         <FeatureHotelDemo />
         <Testimonials />
         <KineticScrollGallery />
+        <HotelLocationMapSection/>
         <ContactPage />
       </main>
 

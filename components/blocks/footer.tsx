@@ -8,18 +8,19 @@ export default function Footer() {
   return (
     <footer className="bg-background border-t border-border font-sans">
       <div className="container mx-auto px-6 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr] gap-8 md:gap-12">
+
           {/* Brand */}
-          <div className="space-y-4">
-            <Link href="/" aria-label="home" className="flex items-center space-x-2">
-              <div className="rounded-lg p-2 bg-black/95 backdrop-blur-md shadow-xl border border-white/10">
-                <div className="relative h-12 w-44 sm:h-14 sm:w-56 lg:h-16 lg:w-64">
+          <div className="space-y-4 break-words">
+            <Link href="/" aria-label="home" className="flex items-center">
+              <div className="rounded-lg p-2 bg-black/95 backdrop-blur-md shadow-xl border border-white/10 max-w-full">
+                <div className="relative h-12 w-40 sm:h-14 sm:w-48 lg:h-16 lg:w-56">
                   <Image
                     src="/Aarya-logo-Golden.svg"
                     alt="Aarya Hotels"
                     fill
-                    className="object-contain object-center scale-160"/>
+                    className="object-contain object-center"
+                  />
                 </div>
               </div>
             </Link>

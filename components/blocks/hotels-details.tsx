@@ -4,7 +4,7 @@ import Feature108  from "@/components/blocks/shadcnblocks-com-feature108"
 
 const HotelData = {
   badge: "Our Amenities",
-  heading: "Stay at Aarya Hotels Ramnagar",
+  heading: "Stay at Jim Corbett Hotel Ramnagar",
   description: "Discover a perfect blend of comfort, elegance, and convenience at Aarya Hotels Ramnagar. Located in the heart of the city, our hotel offers premium facilities, well-appointed spaces, and attentive service to ensure a relaxing and seamless stay. Whether you are traveling for leisure or business, we provide a welcoming environment designed to make every moment comfortable and memorable.",
   tabs: [
     {

@@ -201,7 +201,7 @@ export default function Feature108({
 
   <div className="grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-3 lg:grid-cols-3">
     {[
-      { icon: Mountain, label: 'Panoramic Kosi River View' },
+      { icon: Mountain, label: 'Panoramic Forest View' },
       { icon: PawPrint, label: 'Close to Jim Corbett Wildlife Sanctuary' },
       { icon: Coffee, label: 'Vegetarian Multi-Cuisine Restaurants' },
       { icon: Car, label: 'Safari to Dhikala Gate' },

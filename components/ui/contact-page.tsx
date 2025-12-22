@@ -15,7 +15,8 @@ import {
 import { Button, ButtonProps } from '@/components/ui/button';
 
 const APP_EMAIL = 'contactus@aaryahotels.in';
-const APP_PHONE = '+92 9319020033';
+const APP_PHONES = ['+91 9319020033', '+91 8923287075'];
+
 
 export function ContactPage() {
 	const socialLinks = [
@@ -77,16 +78,21 @@ export function ContactPage() {
 					</Box>
 
 					<Box icon={Phone} title="Phone" description="We're available 24/7" className="border-b-0 md:border-r-0">
-						<div className="flex items-center gap-x-2">
-							<a
-								href={`tel:${APP_PHONE}`}
-								className="block   text-base font-medium tracking-wide hover:underline"
-							>
-								{APP_PHONE}
-							</a>
-							<CopyButton className="size-6" test={APP_PHONE} variant="outline" />
-						</div>
-					</Box>
+  <div className="flex flex-col gap-y-2">
+    {APP_PHONES.map((phone) => (
+      <div key={phone} className="flex items-center gap-x-2">
+        <a
+          href={`tel:${phone}`}
+          className="block text-base font-medium tracking-wide hover:underline"
+        >
+          {phone}
+        </a>
+        <CopyButton className="size-6" test={phone} variant="outline" />
+      </div>
+    ))}
+  </div>
+</Box>
+
 				</div>
 
 				<BorderSeparator />

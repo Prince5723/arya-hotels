@@ -16,7 +16,7 @@ function Hero() {
                 Stay in the Heart of Ramnagar
               </h1>
               <p className="text-xl leading-relaxed tracking-tight text-foreground/80 max-w-md text-left">
-                Experience comfort and luxury in the heart of Ramnagar. Our hotel offers modern amenities, warm hospitality, and easy access to local attractions, making it perfect for both business and leisure travelers.
+                Experience comfort and luxury in the heart of Ramnagar. Our Jim Corbett hotel offers modern amenities, warm hospitality, and easy access to local attractions, making it perfect for both business and leisure travelers.
               </p>
             </div>
             <div className="flex flex-row gap-4">
