@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { 
   TreePine, Sparkles, Map, Music, Wine, 
-  Coffee, Info, CheckCircle2, Star, Snowflake, Zap
+  Coffee, Info, CheckCircle2, Star, Snowflake, Zap, Crown
 } from 'lucide-react';
 
 // --- Types ---
-type ThemeType = 'christmas' | 'newyear' | 'safari' | 'daily';
+type ThemeType = 'membership' | 'christmas' | 'newyear' | 'safari' | 'daily';
 
 interface Package {
   id: string;
@@ -23,6 +23,28 @@ interface Package {
 
 // --- Package Data ---
 const packages: Record<string, Package[]> = {
+  "Membership": [
+    {
+      id: "m1",
+      theme: "membership",
+      tag: "Elite Access",
+      title: "3-Year Luxury Membership",
+      price: "39,999",
+      validity: "Valid for 3 Years",
+      description: "Our most exclusive tier. Includes a luxury family stay with safari and a recurring 5-night stay benefit for 3 consecutive years.",
+      inclusions: [
+        "Primary Stay: 2 Night 3 Day for family (2 Adults + 2 Kids < 12yrs)",
+        "Daily Breakfast and Dinner included",
+        "01 Tiger Safari during stay (Transfer cost extra)",
+        "Unlimited soft beverages for staying guests",
+        "In-room: 02 Beer cans & 06 pegs (60ml) hard liquor per day",
+        "Evening Hi-Tea included",
+        "Bonus: 5 Nights / 6 Days room-only stay every year for 3 years"
+      ],
+      isSafariIncluded: true,
+      policy: "Kids < 12 yrs: Included in 01 room (1 extra bed). Adults (12+): ₹4,000/day extra (includes all package perks)."
+    }
+  ],
   "Christmas": [
     {
       id: "c1",
@@ -194,6 +216,14 @@ const packages: Record<string, Package[]> = {
 };
 
 const ThemeDecorator = ({ type }: { type: ThemeType }) => {
+  if (type === 'membership') {
+    return (
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 overflow-hidden">
+        <Crown className="absolute top-4 right-8 text-amber-200" size={40} />
+        <div className="absolute -bottom-10 -left-10 border-[80px] border-transparent border-b-white/10 rotate-45" />
+      </div>
+    );
+  }
   if (type === 'christmas') {
     return (
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 overflow-hidden">
@@ -222,10 +252,9 @@ const ThemeDecorator = ({ type }: { type: ThemeType }) => {
 };
 
 const PackageSection = () => {
-  const [activeTab, setActiveTab] = useState("Christmas");
-  const categories = ["Christmas", "New Year", "Weekend/Weekdays", "Daily Rates"];
+  const [activeTab, setActiveTab] = useState("Membership");
+  const categories = ["Membership", "Christmas", "New Year", "Weekend/Weekdays", "Daily Rates"];
 
-  // --- WhatsApp Redirect Handler ---
   const handleBooking = (packageTitle: string) => {
     const phoneNumber = "919319020033";
     const message = encodeURIComponent(`Hi Aarya, I would like to reserve my stay for: ${packageTitle}`);
@@ -233,10 +262,11 @@ const PackageSection = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const currentPackages = packages[activeTab];
+
   return (
     <section className="bg-[#F5F1ED] py-20 px-4 md:px-12" id="packages">
       <div className="max-w-7xl mx-auto">
-        {/* Title Block matching Aarya Website style */}
         <div className="text-center mb-16">
           <h2 className="text-[#5D1C3C] text-5xl font-serif mb-4 uppercase tracking-tight">Our Special Packages</h2>
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -246,7 +276,6 @@ const PackageSection = () => {
           </div>
         </div>
 
-        {/* Custom Tab Navigation */}
         <div className="flex flex-wrap justify-center gap-0 mb-16 border-b border-[#A07A4B]/20">
           {categories.map((cat) => (
             <button
@@ -263,12 +292,18 @@ const PackageSection = () => {
           ))}
         </div>
 
-        {/* Packages Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {packages[activeTab].map((pkg) => (
-            <div key={pkg.id} className="bg-white group relative shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col border border-gray-100">
-              
-              {/* Card Header with Theme Overlays */}
+        {/* Dynamic Layout: Centered Flex if 1 item, Grid if more */}
+        <div className={currentPackages.length === 1 
+          ? "flex justify-center" 
+          : "grid grid-cols-1 lg:grid-cols-2 gap-12"
+        }>
+          {currentPackages.map((pkg) => (
+            <div 
+              key={pkg.id} 
+              className={`bg-white group relative shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col border border-gray-100 ${
+                currentPackages.length === 1 ? "w-full lg:max-w-2xl" : ""
+              }`}
+            >
               <div className="bg-[#5D1C3C] py-5 px-8 relative overflow-hidden">
                 <ThemeDecorator type={pkg.theme} />
                 <div className="relative z-10 flex justify-between items-center">
@@ -283,7 +318,6 @@ const PackageSection = () => {
               </div>
 
               <div className="p-8 flex-grow">
-                {/* Price Area */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-4xl font-bold text-[#A07A4B]">₹{pkg.price}</span>
                   <span className="text-sm text-gray-400 font-medium">+ tax</span>
@@ -294,14 +328,13 @@ const PackageSection = () => {
                   {pkg.description}
                 </p>
 
-                {/* Detailed Inclusions List */}
                 <div className="space-y-4 mb-10">
                    <p className="text-[#5D1C3C] text-[11px] font-black uppercase tracking-widest border-b pb-2">What's included in the stay:</p>
                   {pkg.inclusions.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-4 text-sm text-gray-700">
                       <div className="mt-1 flex-shrink-0 text-[#A07A4B]">
                         {item.includes('Safari') ? <Map size={16}/> : 
-                         item.includes('DJ') || item.includes('Music') ? <Music size={16}/> :
+                         item.includes('Bonus') ? <Crown size={16}/> :
                          item.includes('liquor') || item.includes('Beer') ? <Wine size={16}/> : <CheckCircle2 size={16}/>}
                       </div>
                       <span className="font-medium leading-tight">{item}</span>
@@ -309,19 +342,17 @@ const PackageSection = () => {
                   ))}
                 </div>
 
-                {/* Detailed Child Policy Info Box */}
                 <div className="mt-auto bg-[#F5F1ED] p-5 border-l-4 border-[#5D1C3C]">
                   <div className="flex items-start gap-3">
                     <Info size={16} className="mt-1 text-[#5D1C3C] flex-shrink-0"/>
                     <div className="space-y-1">
-                      <p className="text-[11px] font-bold text-[#5D1C3C] uppercase">Child & Extra Bed Policy</p>
+                      <p className="text-[11px] font-bold text-[#5D1C3C] uppercase">Important Policy</p>
                       <p className="text-[11px] text-gray-600 leading-normal italic">{pkg.policy}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Action Button */}
               <button 
                 onClick={() => handleBooking(pkg.title)}
                 className="w-full cursor-pointer bg-[#F5F1ED] group-hover:bg-[#5D1C3C] text-[#5D1C3C] group-hover:text-white py-5 font-bold uppercase tracking-[0.2em] text-xs transition-all duration-300 border-t border-gray-100"
