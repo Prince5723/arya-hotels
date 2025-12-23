@@ -20,6 +20,22 @@ export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false)
   const [hotelsDropdownOpen, setHotelsDropdownOpen] = React.useState(false)
 
+  // --- WhatsApp Redirect Logic ---
+  const handleWhatsAppRedirect = (context: string) => {
+    const phoneNumber = "919319020033";
+    const message = encodeURIComponent(
+      context === 'booking' 
+        ? "Hi Aarya Hotels, I'm looking to book a stay with you." 
+        : "Hi Aarya Hotels, I'm interested in partnering with you."
+    );
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Close mobile menu if open
+    setMenuState(false);
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <header className="fixed left-0 top-0 z-50 w-full bg-primary/95 shadow-lg backdrop-blur-sm">
       <nav className="mx-auto flex h-[80px] md:h-[100px] max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -33,7 +49,6 @@ export const HeroHeader = () => {
               priority
               className="object-contain object-center scale-200 sm:scale-200 lg:scale-200"
             />
-
           </div>
         </Link>
 
@@ -54,7 +69,7 @@ export const HeroHeader = () => {
           <div className="relative">
             <button
               onClick={() => setHotelsDropdownOpen(!hotelsDropdownOpen)}
-              className="flex items-center gap-1 text-primary-foreground hover:text-secondary"
+              className="flex items-center gap-1 text-primary-foreground hover:text-secondary cursor-pointer"
             >
               Our Hotels
               <ChevronDown className="h-4 w-4" />
@@ -89,11 +104,19 @@ export const HeroHeader = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:items-center lg:gap-4">
-          <Button variant="secondary" asChild>
-            <Link href="#booking">Book Now</Link>
+          <Button 
+            variant="secondary" 
+            className="cursor-pointer"
+            onClick={() => handleWhatsAppRedirect('booking')}
+          >
+            Book Now
           </Button>
-          <Button variant="outline" asChild>
-            <Link href="#partner">Partner With Us</Link>
+          <Button 
+            variant="outline" 
+            className="cursor-pointer"
+            onClick={() => handleWhatsAppRedirect('partner')}
+          >
+            Partner With Us
           </Button>
         </div>
 
@@ -147,15 +170,19 @@ export const HeroHeader = () => {
 
           {/* Mobile CTA */}
           <div className="mt-8 space-y-4">
-            <Button variant="secondary" className="w-full" asChild>
-              <Link href="#booking" onClick={() => setMenuState(false)}>
-                Book Now
-              </Link>
+            <Button 
+              variant="secondary" 
+              className="w-full cursor-pointer" 
+              onClick={() => handleWhatsAppRedirect('booking')}
+            >
+              Book Now
             </Button>
-            <Button variant="outline" className="w-full" asChild>
-              <Link href="#partner" onClick={() => setMenuState(false)}>
-                Partner With Us
-              </Link>
+            <Button 
+              variant="outline" 
+              className="w-full cursor-pointer" 
+              onClick={() => handleWhatsAppRedirect('partner')}
+            >
+              Partner With Us
             </Button>
           </div>
         </motion.div>
