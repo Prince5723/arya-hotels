@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -15,10 +14,11 @@ interface BhojsalaHeroProps extends HTMLMotionProps<"section"> {
 
 const cn = (...classes: (string | undefined)[]) => classes.filter(Boolean).join(" ");
 
+// Fixed: Changed 'a' to 'div' to prevent nested anchor tags
 const Button = ({ children, asChild, size, ...props }: any) => (
-    <a className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md hover:opacity-90 transition-opacity" {...props}>
+    <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md hover:opacity-90 transition-opacity cursor-pointer" {...props}>
         {children}
-    </a>
+    </div>
 );
 
 const BhojsalaHero = React.forwardRef<HTMLElement, BhojsalaHeroProps>(
@@ -147,14 +147,13 @@ const BhojsalaHero = React.forwardRef<HTMLElement, BhojsalaHeroProps>(
                     </motion.div>
                 </div>
 
-                {/* Image with Enhanced Animation */}
+                {/* Image Section */}
                 <motion.div
                     className="relative w-full md:w-1/2 lg:w-2/5 h-[400px] md:h-screen"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    {/* Gradient Overlay */}
                     <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent z-10 mix-blend-overlay"
                         initial={{ opacity: 0 }}
@@ -162,7 +161,6 @@ const BhojsalaHero = React.forwardRef<HTMLElement, BhojsalaHeroProps>(
                         transition={{ delay: 0.5, duration: 1 }}
                     />
 
-                    {/* Main Image */}
                     <motion.div
                         className="absolute inset-0 bg-cover bg-center"
                         style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -180,7 +178,6 @@ const BhojsalaHero = React.forwardRef<HTMLElement, BhojsalaHeroProps>(
                         }}
                     />
 
-                    {/* Decorative Frame */}
                     <motion.div
                         className="absolute inset-4 md:inset-8 border-2 border-primary/30 rounded-lg pointer-events-none z-20"
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -196,4 +193,3 @@ const BhojsalaHero = React.forwardRef<HTMLElement, BhojsalaHeroProps>(
 BhojsalaHero.displayName = "BhojsalaHero";
 
 export { BhojsalaHero };
-

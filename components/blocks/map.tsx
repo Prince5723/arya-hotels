@@ -6,26 +6,31 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 export default function HotelLocationMapSection() {
-    const destinationLat = 29.3570347;
-    const destinationLng = 79.0872494;
+    const destinationLat = 29.357062475276887;
+    const destinationLng = 79.08461257552771;
 
     const handleGetDirections = () => {
         if (typeof window === "undefined") return;
 
+        // Direct link to Aarya Hotel with place ID
+        const placeId = "ChIJ1WzohphaCTkRgeJBAvRLdqU";
+        
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    const url = `https://www.google.com/maps/dir/${latitude},${longitude}/${destinationLat},${destinationLng}`;
+                    const url = `https://www.google.com/maps/dir/${latitude},${longitude}/Aarya+Hotel,+Ramnagar/@${destinationLat},${destinationLng}`;
                     window.open(url, "_blank");
                 },
                 () => {
-                    const fallbackUrl = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
+                    // Fallback: Direct link to Aarya Hotel
+                    const fallbackUrl = `https://www.google.com/maps/place/Aarya+Hotel/@${destinationLat},${destinationLng},17z/data=!3m1!4b1!4m6!3m5!1s${placeId}!8m2!3d${destinationLat}!4d${destinationLng}!16s%2Fg%2F11y3l5g3nm`;
                     window.open(fallbackUrl, "_blank");
                 }
             );
         } else {
-            const fallbackUrl = `https://www.google.com/maps/search/?api=1&query=${destinationLat},${destinationLng}`;
+            // Fallback: Direct link to Aarya Hotel
+            const fallbackUrl = `https://www.google.com/maps/place/Aarya+Hotel/@${destinationLat},${destinationLng},17z/data=!3m1!4b1!4m6!3m5!1s${placeId}!8m2!3d${destinationLat}!4d${destinationLng}!16s%2Fg%2F11y3l5g3nm`;
             window.open(fallbackUrl, "_blank");
         }
     };
@@ -199,7 +204,7 @@ export default function HotelLocationMapSection() {
 
                             <iframe
                                 title="Jim Corbett Ramnagar Hotel Location"
-                                src="https://www.google.com/maps?q=29.3570347,79.0872494&z=16&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.4516380772884!2d79.08461257552771!3d29.357062475276887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390a15986ee86cd5%3A0xa5764b0f0241e581!2sAarya%20Hotel!5e0!3m2!1sen!2sin!4v1766474299785!5m2!1sen!2sin"
                                 className="w-full h-full"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"

@@ -8,6 +8,7 @@ import KineticScrollGallery from "@/components/kinetic-scroll-gallery";
 import { ContactPage } from "@/components/ui/contact-page";
 import Footer from "@/components/blocks/footer";
 import HotelLocationMapSection from "@/components/blocks/map";
+import PackageSection from "@/components/blocks/packageSection";
 
 /* ---------- SEO METADATA ---------- */
 
@@ -50,6 +51,7 @@ export default function HotelPage() {
 
       <main className="flex flex-col gap-12 md:gap-16 lg:gap-20">
         <HeroHotelPage />
+        <PackageSection/>
         <FeatureHotelDemo />
         <Testimonials />
         <KineticScrollGallery />

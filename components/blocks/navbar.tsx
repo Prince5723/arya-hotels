@@ -13,6 +13,7 @@ const hotelLocations = [
 const menuItems = [
   { name: 'About Us', href: '#about' },
   { name: 'Contact Us', href: '#contact' },
+  { name: 'Packages', href: '#packages' },
 ]
 
 export const HeroHeader = () => {
