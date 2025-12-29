@@ -15,14 +15,14 @@ import {
 import { Button, ButtonProps } from '@/components/ui/button';
 
 const APP_EMAIL = 'contactus@aaryahotels.in';
-const APP_PHONES = ['+91 9319020033', '+91 8923287075'];
+const APP_PHONES = ['+91 9319020033', '+91 8679104475'];
 
 
 export function ContactPage() {
 	const socialLinks = [
 		{
 			icon: Facebook,
-			href: 'https://facebook.com/aaryahotels',
+			href: 'https://www.instagram.com/aaryahotels/#',
 			label: 'Facebook',
 		},
 		{
@@ -32,7 +32,7 @@ export function ContactPage() {
 		},
 		{
 			icon: InstagramIcon,
-			href: 'https://instagram.com/aaryahotels',
+			href: 'https://www.instagram.com/aaryahotels/#',
 			label: 'Instagram',
 		},
 	];

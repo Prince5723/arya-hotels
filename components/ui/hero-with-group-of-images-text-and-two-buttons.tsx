@@ -9,11 +9,11 @@ function Hero() {
         <div className="grid grid-cols-1 gap-8 md:gap-10 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
             <div>
-              <Badge variant="outline">We&apos;re excited to host you</Badge>
+              <Badge variant="outline">Check special packages below</Badge>
             </div>
             <div className="flex gap-4 flex-col">
               <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
-                Stay in the Heart of Ramnagar
+                Experience luxury at our Jim Corbett hotel, Ramnagar
               </h1>
               <p className="text-xl leading-relaxed tracking-tight text-foreground/80 max-w-md text-left">
                 Experience comfort and luxury in the heart of Ramnagar. Our Jim Corbett hotel offers modern amenities, warm hospitality, and easy access to local attractions, making it perfect for both business and leisure travelers.

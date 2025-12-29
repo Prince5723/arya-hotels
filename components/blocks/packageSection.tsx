@@ -43,6 +43,26 @@ const packages: Record<string, Package[]> = {
       ],
       isSafariIncluded: true,
       policy: "Kids < 12 yrs: Included in 01 room (1 extra bed). Adults (12+): ₹4,000/day extra (includes all package perks)."
+    },
+    {
+      id: "m2",
+      theme: "membership",
+      tag: "Royal Legacy",
+      title: "5-Year Royal Membership",
+      price: "49,999",
+      validity: "Valid for 5 Years",
+      description: "The ultimate Aarya legacy. Experience yearly luxury retreats with extended benefits for half a decade.",
+      inclusions: [
+        "Primary Stay: 2 Night 3 Day for family (2 Adults + 2 Kids < 12yrs)",
+        "Includes Breakfast and Dinner",
+        "01 Tiger Safari during stay (Transfer cost extra)",
+        "Evening Hi-Tea & Unlimited soft beverages",
+        "In-room: 02 Beer cans, 06 pegs (60ml) liquor & 2 portions snacks per day",
+        "Bonus: 5 Nights / 6 Days room-only stay every year for 5 years",
+        "Member Perk: 25% discount on meals & services during bonus stays"
+      ],
+      isSafariIncluded: true,
+      policy: "Adults (12+): ₹4,000/day. Extra rooms: ₹4,000 + tax (Breakfast & Hi-Tea included) or ₹5,500 + tax (Breakfast, Choice of Lunch/Dinner & Hi-Tea included)."
     }
   ],
   "Christmas": [
@@ -268,7 +288,7 @@ const PackageSection = () => {
     <section className="bg-[#F5F1ED] py-20 px-4 md:px-12" id="packages">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-[#5D1C3C] text-5xl font-serif mb-4 uppercase tracking-tight">Our Special Packages</h2>
+          <h2 className="text-[#5D1C3C] text-4xl font-serif mb-4 uppercase tracking-tight">Jim Corbett Special Packages</h2>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-12 bg-[#A07A4B]"></div>
             <p className="text-[#A07A4B] font-medium tracking-widest text-sm italic">Stay with Aarya, stay with luxury</p>
@@ -292,7 +312,6 @@ const PackageSection = () => {
           ))}
         </div>
 
-        {/* Dynamic Layout: Centered Flex if 1 item, Grid if more */}
         <div className={currentPackages.length === 1 
           ? "flex justify-center" 
           : "grid grid-cols-1 lg:grid-cols-2 gap-12"
